@@ -1,19 +1,27 @@
-alert("Boas vindas ao nosso Site!");
-nomeUsuario = prompt ("Qual seu nome? ");
-suaIdade = prompt ("Quantos anos você tem? ");
-linguagem = prompt ("Qual Linguagem de programação você está estudando?")
-sim = 1
-nao = 2
-alert("Olá " + nomeUsuario + "! Você tem " + suaIdade + " e já esta aprendendo " + linguagem + "!");
+document.getElementById('startQuiz').addEventListener('click', function() {
+    let score = 0;
 
-extra = prompt ("Você gosta de estudar linguagem de Programação? Responda com o número 1 para SIM ou 2 para NÃO.")
+    // Pergunta 1
+    let answer1 = prompt("Qual é a capital do Brasil?");
+    if (answer1.toLowerCase() === "brasilia") {
+        score++;
+        alert("Correto!");
+    } else {
+        alert("Incorreto! A resposta correta é Brasília.");
+    }
 
-if(extra == 1) {
-   alert("Muito bom! Continue estudando e você terá muito sucesso.")
-} else {
-   alert("Ahh que pena... Já tentou aprender outras linguagens?.")
-}
-
-
-
- 
+    // Pergunta 2
+    let answer2 = prompt("Quantos continentes existem no mundo?");
+    if (answer2 === "7") {
+        score++;
+        alert("Correto!");
+    } else {
+        alert("Incorreto! A resposta correta é 7.");
+    }
+    
+    // Resultado final
+    document.getElementById('output').innerText = `Você acertou ${score} de 2 perguntas.`;
+});
+</script>
+</body>
+</html>
